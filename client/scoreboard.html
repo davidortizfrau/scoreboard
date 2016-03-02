@@ -1,0 +1,40 @@
+<template name="scoreboard">
+  <div class="row scores">
+    <div class="col-xs-4">
+      <h1>Home</h1>
+      <span class="score">{{ homeScore }}</span>
+    </div>
+
+    <div class="col-xs-4">
+      <span class="timer score">{{minutes}}:{{seconds}}</span>
+      <p>QTR <span class="tracking">{{ quarter }}</span></p>
+    </div>
+
+    <div class="col-xs-4">
+      <h1>Visitor</h1>
+      <span class="score">{{ visitorScore }}</span>
+    </div>
+
+  </div>
+
+  <div class="row">
+    <div class="col-xs-4">
+      <p><span class="tracking">{{ down }}</span> Down</p>
+    </div>
+    <div class="col-xs-4">
+      <p><span class="tracking">{{ toGo }}</span> To Go</p>
+    </div>
+    <div class="col-xs-4" id="ballOn">
+      <p>
+        Ball on
+        <span class="tracking">
+          {{ ballOn.yard }}
+          <span class="own">{{ own }}</span>
+        </span>
+      </p>
+    </div>
+  </div>
+
+  <span class="fa fa-question-circle"></span>
+  <span class="fa fa-chevron-up"></span>
+</template>
