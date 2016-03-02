@@ -59,6 +59,7 @@ function dropSecond(){
   };
   if (seconds >= 1) {
     Session.set('seconds', seconds - 1);
+    if (seconds - 1 <= 0) { blowWhistle() };
   } else {
     stopTimer();
     nextQuarter();
@@ -76,10 +77,15 @@ function resetTimer(){
 }
 
 function twoMinuteWarning(){
+  blowWhistle();
   Session.set('seconds', 119.99);
   stopTimer();
 }
 
+function blowWhistle(){
+  let audio = new Audio('/WhistleBlow.mp3');
+  audio.play();
+}
 
 
 function ballForward(shiftKey){
