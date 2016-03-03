@@ -28,3 +28,9 @@ Template.scoreboard.helpers({
     return Session.get('quarter');
   }
 });
+
+Template.scoreboard.events({
+  'click .fa-question-circle': function(){
+    $('#help-sidebar').removeClass('hidden');
+  }
+});

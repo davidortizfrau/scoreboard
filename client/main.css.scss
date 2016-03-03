@@ -5,6 +5,7 @@ body {
   font-family: 'Keania One', cursive;
   text-transform: uppercase;
   padding: 4vw;
+  overflow-x: hidden;
 }
 
 h1 {
@@ -38,7 +39,7 @@ p {
 }
 .fa-question-circle {
   position: absolute;
-  bottom: 1vw;
+  top: 1vw;
   right: 1vw;
   font-size: 3vw;
   opacity: 0.5;
@@ -51,44 +52,6 @@ p {
   font-size: 16px;
   opacity: 0.5;
   cursor: pointer;
-}
-
-#scoreInput {
-  height: 200px;
-  width: 100%;
-  background-color: white;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-
-  h1 {
-    color: #333;
-    font-size: 2vw;
-  }
-}
-
-.btn2 {
-  height: 42px;
-  width: 42px;
-  border-radius: 21px;
-  margin: 0.5em;
-  background-color: #333;
-  border: none;
-
-  &:hover {
-    background-color: #333;
-    opacity: 0.75;
-  }
-
-  &:active {
-    background-color: #333;
-    border: none;
-  }
-
-  &:visited {
-    background-color: #333;
-    border: none;
-  }
 }
 
 button:focus {outline:0;}

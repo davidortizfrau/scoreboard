@@ -1,7 +1,7 @@
 Session.set('homeScore', 0);
 Session.set('visitorScore', 0);
 
-Template.input.events({
+Template.scoring.events({
   'click .btn2': function(e){
     e.preventDefault();
     let side = $(e.target).attr('data-side');
