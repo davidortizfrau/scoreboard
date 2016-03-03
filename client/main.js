@@ -5,7 +5,7 @@ Session.set('chains', Yards()[19]);
 Session.set('down', 1);
 Session.set('toGo', 10);
 
-Session.set('seconds', 3);
+Session.set('seconds', 480);
 Session.set('quarter', 1)
 
 Timer = null; // Global Variable
@@ -63,13 +63,14 @@ function dropSecond(){
   } else {
     stopTimer();
     nextQuarter();
-    resetTimer();
   };
 }
 
-function nextQuarter() {
+function nextQuarter(){
   let quarter = Number(Session.get('quarter'));
+  if (quarter == 4) { return };
   Session.set('quarter', quarter + 1)
+  resetTimer();
 }
 
 function resetTimer(){
@@ -119,6 +120,10 @@ function yardsToGo(){
   let chains = Session.get('chains');
   let firstDowndMarkerIndex = chains.index + 10
   let toGo = firstDowndMarkerIndex - Session.get('ballOn').index;
+
+  if (firstDowndMarkerIndex > 99) {
+    toGo = Session.get('ballOn').yard;
+  };
 
   if (toGo < 1) {
     firstDown();
